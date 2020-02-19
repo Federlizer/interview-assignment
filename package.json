@@ -1,0 +1,29 @@
+{
+  "name": "interview-assignment",
+  "version": "1.0.0",
+  "description": "We kindly ask you to solve the task below. By solving and submitting this assignment you provide us with insights in how you solve real-world problems. What we will be looking at are topics such as: choice of technology, structuring of code, use of VCS, selection of 3rd party libraries, documentation etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Federlizer/interview-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Federlizer/interview-assignment/issues"
+  },
+  "homepage": "https://github.com/Federlizer/interview-assignment#readme",
+  "dependencies": {
+    "line-by-line": "^0.1.6",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}
