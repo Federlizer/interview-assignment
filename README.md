@@ -1,15 +1,33 @@
 # Job interview assignment
-We kindly ask you to solve the task below. By solving and submitting this assignment you provide us with insights in how you solve real-world problems. What we will be looking at are topics such as: choice of technology, structuring of code, use of VCS, selection of 3rd party libraries, documentation etc.
+A script that accepts an SQL query and executes it. The results from that query are then processed and saved on a file
+in the working directory (`dump.csv`). The script then verifies the data integrity and deletes the database entries.
 
-## The task
-Develop a solution that, given a select query, can read data from a database, write it to a local file and then delete the data from the database. The solution should verify that data is written to the file, and that data integrity is maintained, before deleting it from the database.
+## Usage
+The script requires a `config.json` file in the src directory containing the following information:
 
-- Use Bash, PHP, JavaScript or Go as the language
-- Use MySQL, MariaDB, CockroachDB or SQLite as the database
+```json
+{
+  "db": {
+    "host": "db_host_url",
+    "user": "db_user",
+    "password": "db_user_pw",
+    "database": "db_to_use"
+  }
+}
+```
 
-Please use the data set provided in the SQL dump in this repo. Please also consider that your solution should be able to handle much larger data sets.
+To run the script:
 
-## Expectations
-Make a copy of this repo. Solve the task below. Push your code to a public repo, and send us the link as a reply to our email.
+```
+$ npm install
+$ ./src/index.js <sql query>
 
-Your solution should include a short readme describing your solution, how to use/test it and any final considerations such as known errors, next steps, security concerns etc. Don’t worry we are not expecting this thing to be perfect.
+# Example:
+
+$ ./src/index.js "select * from users"
+```
+
+### Known errors and shortcommings
+* The script doesn't do any checks on the sql query, meaning sql injections and some bugs are possible
+* In this solution I used the mysql package, however a cleaner solution would have been possible by using a MariaDB package instead
+* Solution lacks tests
